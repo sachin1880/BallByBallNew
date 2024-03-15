@@ -7,17 +7,18 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".NotificationActivity">
+
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bground"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/notification"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -52,10 +53,11 @@
         android:id="@+id/ll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/header"
         android:gravity="center"
-        android:layout_margin="10dp"
-        android:visibility="visible"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_90sdp"
+        android:visibility="gone"
         android:orientation="vertical">
 
         <ImageView
@@ -87,12 +89,15 @@
             android:gravity="center"/>
 
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:visibility="gone"
-        android:layout_margin="@dimen/_5sdp"
-        android:id="@+id/rv_notification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"/>
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_margin="@dimen/_5sdp"-->
+<!--        android:id="@+id/rv_notification"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/header"/>-->
+
+
 
 </RelativeLayout>

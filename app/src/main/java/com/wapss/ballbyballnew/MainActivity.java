@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getWindow().getContext(), R.color.black));
 
-        notification=findViewById(R.id.notification);
+       // notification=findViewById(R.id.notification);
 
         //navigation
         nav_view1 = findViewById(R.id.nav_view1);
@@ -64,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        notification.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
     }
 
