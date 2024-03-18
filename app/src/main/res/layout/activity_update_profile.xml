@@ -124,8 +124,8 @@
                 android:background="@null"
                 android:textColor="@color/purple"
                 android:textColorHint="@color/purple"
-                android:maxLength="15"
                 android:layout_gravity="center"
+                android:singleLine="true"
                 android:padding="@dimen/_5sdp"
                 android:inputType="text" />
 
@@ -150,7 +150,7 @@
                 android:background="@null"
                 android:textColor="@color/purple"
                 android:textColorHint="@color/purple"
-                android:maxLength="30"
+                android:singleLine="true"
                 android:layout_gravity="center"
                 android:padding="@dimen/_5sdp"
                 android:inputType="textEmailAddress" />
@@ -160,25 +160,36 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:orientation="vertical"
-            android:padding="@dimen/_5sdp"
-            android:background="@drawable/background"
             android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:background="@drawable/background"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp">
 
             <EditText
+                android:id="@+id/et_DOB"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Phone"
-                android:textSize="@dimen/_13ssp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@null"
+                android:hint="DOB"
+                android:inputType="textEmailAddress"
+                android:maxLength="30"
+                android:padding="@dimen/_5sdp"
                 android:textColor="@color/purple"
                 android:textColorHint="@color/purple"
-                android:maxLength="30"
+                android:textSize="@dimen/_13ssp" />
+
+            <ImageView
+                android:id="@+id/iv_dob"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_gravity="center"
+                android:layout_weight="6"
                 android:padding="@dimen/_5sdp"
-                android:inputType="textEmailAddress" />
+                android:src="@drawable/baseline_calendar_month_24" />
 
         </LinearLayout>
 
