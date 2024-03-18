@@ -13,6 +13,12 @@
         android:theme="@style/Theme.BallByBallNew"
         tools:targetApi="31">
         <activity
+            android:name=".Wallet"
+            android:exported="false" />
+        <activity
+            android:name=".League_Page"
+            android:exported="false" />
+        <activity
             android:name=".Notification"
             android:exported="false" />
         <activity
