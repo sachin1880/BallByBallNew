@@ -145,7 +145,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/card_bg"
+                android:background="@drawable/edite_bg"
                 android:orientation="vertical">
 
                 <TextView
@@ -278,6 +278,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

@@ -8,6 +8,6 @@
     <color name="navcolor">#566881</color>
     <color name="navcolo1r">#D4E4FA</color>
     <color name="btn_color">#440B64</color>
-    background: ;
+    <color name="deposit">#56BA2E</color>
 
 </resources>
