@@ -1,14 +1,16 @@
-package com.wapss.ballbyballnew;
+package com.wapss.ballbyballnew.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Wallet extends AppCompatActivity {
+import com.wapss.ballbyballnew.R;
+
+public class Bank_Details extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wallet);
+        setContentView(R.layout.activity_bank_details);
     }
 }

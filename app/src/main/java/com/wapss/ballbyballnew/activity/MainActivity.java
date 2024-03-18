@@ -1,4 +1,4 @@
-package com.wapss.ballbyballnew;
+package com.wapss.ballbyballnew.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.wapss.ballbyballnew.R;
 import com.wapss.ballbyballnew.fragment.HomeFragment;
 import com.wapss.ballbyballnew.fragment.MatcheFragment;
 import com.wapss.ballbyballnew.fragment.Profile_Fragment;

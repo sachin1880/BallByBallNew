@@ -18,46 +18,46 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Wallet"
+            android:name=".activity.Wallet"
             android:exported="false" />
         <activity
-            android:name=".League_Page"
+            android:name=".activity.League_Page"
             android:exported="false" />
         <activity
             android:name=".Notification"
             android:exported="false" />
         <activity
-            android:name=".Refer_Earn"
+            android:name=".activity.Refer_Earn"
             android:exported="false" />
         <activity
-            android:name=".Bank_Details"
+            android:name=".activity.Bank_Details"
             android:exported="false" />
         <activity
-            android:name=".Update_Profile"
+            android:name=".activity.Update_Profile"
             android:exported="false" />
         <activity
-            android:name=".Match_Schedule"
+            android:name=".activity.Match_Schedule"
             android:exported="false" />
         <activity
-            android:name=".HowToPlay"
+            android:name=".activity.HowToPlay"
             android:exported="false" />
         <activity
-            android:name=".Game_Rules"
+            android:name=".activity.Game_Rules"
             android:exported="false" />
         <activity
-            android:name=".NotificationActivity"
+            android:name=".activity.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".OtpActivity"
+            android:name=".activity.OtpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

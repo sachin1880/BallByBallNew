@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Refer_Earn"
+    tools:context=".activity.Refer_Earn"
     android:background="@drawable/btn_bg">
 
     <LinearLayout

@@ -1,8 +1,10 @@
-package com.wapss.ballbyballnew;
+package com.wapss.ballbyballnew.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.wapss.ballbyballnew.R;
 
 public class Game_Rules extends AppCompatActivity {
 

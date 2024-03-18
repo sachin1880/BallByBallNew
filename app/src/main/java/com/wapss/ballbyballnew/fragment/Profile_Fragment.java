@@ -11,9 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.wapss.ballbyballnew.Game_Rules;
-import com.wapss.ballbyballnew.HowToPlay;
-import com.wapss.ballbyballnew.Match_Schedule;
+import com.wapss.ballbyballnew.activity.Game_Rules;
+import com.wapss.ballbyballnew.activity.HowToPlay;
+import com.wapss.ballbyballnew.activity.Match_Schedule;
 import com.wapss.ballbyballnew.R;
 
 public class Profile_Fragment extends Fragment {

@@ -1,4 +1,4 @@
-package com.wapss.ballbyballnew;
+package com.wapss.ballbyballnew.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import com.wapss.ballbyballnew.R;
 
 public class NotificationActivity extends AppCompatActivity {
     ImageView iv_noti;
@@ -25,7 +27,7 @@ public class NotificationActivity extends AppCompatActivity {
         iv_noti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NotificationActivity.this,MainActivity.class);
+                Intent intent = new Intent(NotificationActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.wapss.ballbyballnew;
+package com.wapss.ballbyballnew.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
+import com.wapss.ballbyballnew.R;
 import com.wapss.ballbyballnew.adapter.MyPagerAdapter;
 import com.wapss.ballbyballnew.fragment.TodayFragment;
 import com.wapss.ballbyballnew.fragment.TomorrowFragment;
