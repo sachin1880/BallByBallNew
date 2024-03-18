@@ -18,8 +18,8 @@ public class ApiService {
                 .readTimeout(100, TimeUnit.SECONDS)
                 .build();
         Retrofit retrofit = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create())
-                // .baseUrl("http://192.168.29.231/newambuja/api/")
-                .baseUrl("https://pemindia.in/celmembercard/")
+                 .baseUrl("http://192.168.29.56:3514/api/v1/")
+               // .baseUrl("https://pemindia.in/celmembercard/")
                 .client(okHttpClient)
                 .build();
         return retrofit;

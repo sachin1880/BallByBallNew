@@ -61,6 +61,7 @@
                 android:layout_marginTop="@dimen/_5sdp">
 
                 <LinearLayout
+                    android:id="@+id/ll_profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -77,6 +78,7 @@
                         android:src="@drawable/user"/>
 
                     <TextView
+                        android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -86,6 +88,7 @@
                         android:textColor="#6A0E97"
                         android:textSize="@dimen/_14ssp" />
                     <TextView
+                        android:id="@+id/phone_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
