@@ -1,10 +1,13 @@
 package com.wapss.ballbyballnew.fragment;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,12 +15,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wapss.ballbyballnew.activity.Game_Rules;
 import com.wapss.ballbyballnew.activity.HowToPlay;
+import com.wapss.ballbyballnew.activity.LoginActivity;
 import com.wapss.ballbyballnew.activity.MainActivity;
 import com.wapss.ballbyballnew.activity.Match_Schedule;
 import com.wapss.ballbyballnew.R;
@@ -25,6 +31,7 @@ import com.wapss.ballbyballnew.activity.RegistrationActivity;
 import com.wapss.ballbyballnew.activity.Update_Profile;
 import com.wapss.ballbyballnew.apiService.ApiService;
 import com.wapss.ballbyballnew.response.GetProfile;
+import com.wapss.ballbyballnew.response.LogOutResponse;
 import com.wapss.ballbyballnew.response.RegistrationResponse;
 
 import java.util.Objects;
@@ -35,13 +42,14 @@ import retrofit2.Response;
 
 public class Profile_Fragment extends Fragment {
 
-    LinearLayout game_rules_layout,how_to_Play,match_schedule;
-    TextView name,phone_number;
+    LinearLayout game_rules_layout, how_to_Play, match_schedule, ll_logOut;
+    TextView name, phone_number;
     SharedPreferences loginPref;
     SharedPreferences.Editor editor;
     ProgressDialog progressDialog;
     String deviceToken;
     LinearLayout ll_profile;
+    private Dialog noInternetDialog;
 
 
     @Override
@@ -83,9 +91,68 @@ public class Profile_Fragment extends Fragment {
             }
         });
 
+        ll_logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                noInternetDialog = new Dialog(getContext());
+                noInternetDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                noInternetDialog.setContentView(R.layout.logout_layout);
+                noInternetDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                noInternetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                noInternetDialog.show();
+                TextView et_yes = (TextView) noInternetDialog.findViewById(R.id.et_yes);
+                TextView et_cancel = (TextView) noInternetDialog.findViewById(R.id.et_cancel);
+                et_yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        SharedPreferences preferences = getContext().getSharedPreferences("login_pref", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.clear();
+                        editor.apply();
+                        Intent intent = new Intent(getContext(), LoginActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    }
+                });
+                et_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        noInternetDialog.dismiss();
+                    }
+                });
+                noInternetDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+                noInternetDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+
+                callLogOutAPI();
+            }
+        });
+
         //callApi
         callProfileAPI();
         return profile;
+    }
+
+    private void callLogOutAPI() {
+        progressDialog.show();
+        String Token = "Bearer " + deviceToken;
+        Call<LogOutResponse> login_apiCall = ApiService.apiHolders().getLogOut(Token);
+        login_apiCall.enqueue(new Callback<LogOutResponse>() {
+            @Override
+            public void onResponse(Call<LogOutResponse> call, Response<LogOutResponse> response) {
+                if (response.code() == 200) {
+                    progressDialog.dismiss();
+                } else {
+                    progressDialog.dismiss();
+                    Toast.makeText(requireContext().getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LogOutResponse> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(requireContext().getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void callProfileAPI() {
@@ -115,6 +182,7 @@ public class Profile_Fragment extends Fragment {
     }
 
     private void initialize(View profile) {
+        ll_logOut = profile.findViewById(R.id.ll_logOut);
         ll_profile = profile.findViewById(R.id.ll_profile);
         game_rules_layout = profile.findViewById(R.id.game_rules_layout);
         how_to_Play = profile.findViewById(R.id.how_to_Play);

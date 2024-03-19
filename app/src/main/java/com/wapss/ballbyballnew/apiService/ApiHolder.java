@@ -1,6 +1,7 @@
 package com.wapss.ballbyballnew.apiService;
 
 import com.wapss.ballbyballnew.response.GetProfile;
+import com.wapss.ballbyballnew.response.LogOutResponse;
 import com.wapss.ballbyballnew.response.LoginResponse;
 import com.wapss.ballbyballnew.response.OTP_Response;
 import com.wapss.ballbyballnew.response.RegistrationResponse;
@@ -34,4 +35,7 @@ public interface ApiHolder {
 
     @GET("account")
     Call<GetProfile> getProfile(@Header("Authorization") String token);
+
+    @GET("auth/logout")
+    Call<LogOutResponse> getLogOut(@Header("Authorization") String token);
 }

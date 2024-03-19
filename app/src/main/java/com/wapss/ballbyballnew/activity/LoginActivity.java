@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         login_apiCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                if (response.code() == 201)  {
+                if (response.code() == 201) {
                     LoginResponse userLogin_response = response.body();
                     assert response.body() != null;
                     String phoneNum = response.body().getMessage();
@@ -90,16 +90,26 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-        private void initi () {
-            deviceId = DeviceUtils.getDeviceId(getApplicationContext());
-            tv_login = findViewById(R.id.tv_login);
-            et_phone = findViewById(R.id.et_phone);
-            //loading
-            progressDialog = new ProgressDialog(LoginActivity.this);
-            progressDialog.setIndeterminate(true);
-            progressDialog.setMessage("Loading...");
-            //sharedPrefrence
-            loginPref = getSharedPreferences("login_pref", Context.MODE_PRIVATE);
-            editor = loginPref.edit();
-        }
+    private void initi() {
+        deviceId = DeviceUtils.getDeviceId(getApplicationContext());
+        tv_login = findViewById(R.id.tv_login);
+        et_phone = findViewById(R.id.et_phone);
+        //loading
+        progressDialog = new ProgressDialog(LoginActivity.this);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage("Loading...");
+        //sharedPrefrence
+        loginPref = getSharedPreferences("login_pref", Context.MODE_PRIVATE);
+        editor = loginPref.edit();
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        super.onBackPressed();
+        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+        homeIntent.addCategory(Intent.CATEGORY_HOME);
+        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(homeIntent);
+    }
+}
