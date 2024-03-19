@@ -432,6 +432,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/about_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -497,6 +498,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/payment_policy_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -562,6 +564,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/settelment_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -627,6 +630,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/notification_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
