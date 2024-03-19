@@ -5,33 +5,35 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.wapss.ballbyballnew.R;
-import com.wapss.ballbyballnew.activity.LoginActivity;
-import com.wapss.ballbyballnew.activity.MainActivity;
-import com.wapss.ballbyballnew.activity.SplashActivity;
 
-import java.util.Objects;
-
-public class LotteryWelcomeActivity extends AppCompatActivity {
+public class LotteryResultActivity extends AppCompatActivity {
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lottery_welcome);
+        setContentView(R.layout.activity_lottery_result);
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getWindow().getContext(), R.color.orange));
-        new Handler().postDelayed(new Runnable() {
+        initi();
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                    startActivity(new Intent(LotteryWelcomeActivity.this, LotteryHomeActivity.class));
-                    finish();
+            public void onClick(View v) {
+                Intent intent = new Intent(LotteryResultActivity.this,LotteryHomeActivity.class);
+                startActivity(intent);
             }
-        }, 3000);
+        });
+    }
+
+    private void initi() {
+        back = findViewById(R.id.back);
     }
 }

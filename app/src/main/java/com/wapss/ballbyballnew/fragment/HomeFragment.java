@@ -13,15 +13,18 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.wapss.ballbyballnew.R;
 import com.wapss.ballbyballnew.activity.League_Page;
 import com.wapss.ballbyballnew.activity.NotificationActivity;
+import com.wapss.ballbyballnew.lottery.LotteryWelcomeActivity;
 
 public class HomeFragment extends Fragment {
 
     ImageView btn_notification;
     TextView btn_view_all;
+    ImageView lottery;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,20 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        initi(home);
+
+        lottery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), LotteryWelcomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return home;
+    }
+
+    private void initi(View home) {
+        lottery = home.findViewById(R.id.lottery);
     }
 }
