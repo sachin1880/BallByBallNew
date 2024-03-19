@@ -27,6 +27,8 @@ import com.wapss.ballbyballnew.activity.LoginActivity;
 import com.wapss.ballbyballnew.activity.MainActivity;
 import com.wapss.ballbyballnew.activity.Match_Schedule;
 import com.wapss.ballbyballnew.R;
+import com.wapss.ballbyballnew.activity.NotificationActivity;
+import com.wapss.ballbyballnew.activity.Pages;
 import com.wapss.ballbyballnew.activity.RegistrationActivity;
 import com.wapss.ballbyballnew.activity.Update_Profile;
 import com.wapss.ballbyballnew.apiService.ApiService;
@@ -42,7 +44,8 @@ import retrofit2.Response;
 
 public class Profile_Fragment extends Fragment {
 
-    LinearLayout game_rules_layout, how_to_Play, match_schedule, ll_logOut;
+    LinearLayout game_rules_layout, how_to_Play, match_schedule, ll_logOut,notification_layout,settelment_layout,
+            payment_policy_layout,about_layout;
     TextView name, phone_number;
     SharedPreferences loginPref;
     SharedPreferences.Editor editor;
@@ -65,6 +68,12 @@ public class Profile_Fragment extends Fragment {
 
         View profile = inflater.inflate(R.layout.fragment_profile_, container, false);
         initialize(profile);
+        notification_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), NotificationActivity.class));
+            }
+        });
         game_rules_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,10 +86,28 @@ public class Profile_Fragment extends Fragment {
                 startActivity(new Intent(getContext(), HowToPlay.class));
             }
         });
+        settelment_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), Pages.class));
+            }
+        });
         match_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), Match_Schedule.class));
+            }
+        });
+        payment_policy_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), Pages.class));
+            }
+        });
+        about_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), Pages.class));
             }
         });
         ll_profile.setOnClickListener(new View.OnClickListener() {
@@ -189,6 +216,10 @@ public class Profile_Fragment extends Fragment {
         match_schedule = profile.findViewById(R.id.match_schedule);
         name = profile.findViewById(R.id.name);
         phone_number = profile.findViewById(R.id.phone_number);
+        notification_layout = profile.findViewById(R.id.notification_layout);
+        settelment_layout = profile.findViewById(R.id.settelment_layout);
+        about_layout = profile.findViewById(R.id.about_layout);
+        payment_policy_layout = profile.findViewById(R.id.payment_policy_layout);
         //shared Pref
         loginPref = getActivity().getSharedPreferences("login_pref", Context.MODE_PRIVATE);
         editor = loginPref.edit();

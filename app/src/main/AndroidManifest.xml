@@ -21,6 +21,9 @@
             android:name=".lottery.LotteryResultActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.Pages"
+            android:exported="false" />
+        <activity
             android:name=".lottery.LotteryHomeActivity"
             android:exported="false" />
         <activity
