@@ -1,5 +1,7 @@
 package com.wapss.ballbyballnew.fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,60 +9,50 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.wapss.ballbyballnew.R;
+import com.wapss.ballbyballnew.activity.Bank_Details;
+import com.wapss.ballbyballnew.activity.OtpActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link WalletFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class WalletFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public WalletFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment WalletFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static WalletFragment newInstance(String param1, String param2) {
-        WalletFragment fragment = new WalletFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    LinearLayout btn_deposite,btn_withdrawal;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_wallet, container, false);
+        View wallet =  inflater.inflate(R.layout.fragment_wallet, container, false);
+
+        btn_deposite = wallet.findViewById(R.id.btn_deposite);
+        btn_withdrawal = wallet.findViewById(R.id.btn_withdrawal);
+        btn_withdrawal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),Bank_Details.class));
+            }
+        });
+        btn_deposite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final androidx.appcompat.app.AlertDialog.Builder builder1 = new androidx.appcompat.app.AlertDialog.Builder(getContext());
+                LayoutInflater inflater1 = getLayoutInflater();
+                View dialogView1 = inflater1.inflate(R.layout.deposit_layout,null);
+                builder1.setCancelable(false);
+                builder1.setView(dialogView1);
+                final androidx.appcompat.app.AlertDialog alertDialog1 = builder1.create();
+                alertDialog1.show();
+                alertDialog1.setCanceledOnTouchOutside(false);
+            }
+        });
+        return wallet;
     }
 }
