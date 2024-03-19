@@ -29,6 +29,7 @@ import com.wapss.ballbyballnew.activity.Match_Schedule;
 import com.wapss.ballbyballnew.R;
 import com.wapss.ballbyballnew.activity.NotificationActivity;
 import com.wapss.ballbyballnew.activity.Pages;
+import com.wapss.ballbyballnew.activity.Refer_Earn;
 import com.wapss.ballbyballnew.activity.RegistrationActivity;
 import com.wapss.ballbyballnew.activity.Update_Profile;
 import com.wapss.ballbyballnew.apiService.ApiService;
@@ -45,7 +46,7 @@ import retrofit2.Response;
 public class Profile_Fragment extends Fragment {
 
     LinearLayout game_rules_layout, how_to_Play, match_schedule, ll_logOut,notification_layout,settelment_layout,
-            payment_policy_layout,about_layout;
+            payment_policy_layout,about_layout,share_layout;
     TextView name, phone_number;
     SharedPreferences loginPref;
     SharedPreferences.Editor editor;
@@ -114,6 +115,13 @@ public class Profile_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Update_Profile.class);
+                startActivity(intent);
+            }
+        });
+        share_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Refer_Earn.class);
                 startActivity(intent);
             }
         });
@@ -220,6 +228,7 @@ public class Profile_Fragment extends Fragment {
         settelment_layout = profile.findViewById(R.id.settelment_layout);
         about_layout = profile.findViewById(R.id.about_layout);
         payment_policy_layout = profile.findViewById(R.id.payment_policy_layout);
+        share_layout = profile.findViewById(R.id.share_layout);
         //shared Pref
         loginPref = getActivity().getSharedPreferences("login_pref", Context.MODE_PRIVATE);
         editor = loginPref.edit();
