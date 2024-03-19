@@ -1,5 +1,6 @@
 package com.wapss.ballbyballnew.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -10,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.wapss.ballbyballnew.R;
+import com.wapss.ballbyballnew.lottery.LotteryWelcomeActivity;
 
 public class HomeFragment extends Fragment {
+    ImageView lottery;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +32,20 @@ public class HomeFragment extends Fragment {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getActivity().getWindow().getContext(), R.color.black));
+        initi(home);
+
+        lottery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), LotteryWelcomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return home;
+    }
+
+    private void initi(View home) {
+        lottery = home.findViewById(R.id.lottery);
     }
 }
