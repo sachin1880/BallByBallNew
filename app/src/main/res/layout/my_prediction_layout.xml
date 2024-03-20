@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout_one"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_90sdp"
+        android:orientation="vertical"
+        android:background="@drawable/predict_bg"
+        android:layout_margin="@dimen/_4sdp"
+        android:padding="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="What is 1.3 over all run by MI ?"
+                android:textColor="#939289"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:background="@drawable/amount_bg"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="No"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:background="@drawable/lose_bg"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Rs. 200"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#939289"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="129 run"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Rs. 200"
+                android:textColor="#CA494C"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Rs. 400"
+                android:textColor="#73F340"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5 sec 22 march 24 15:39:22 Sec"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="4"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="LOSE"
+                android:textColor="#CA494C"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_90sdp"
+        android:orientation="vertical"
+        android:background="@drawable/predict_bg"
+        android:layout_margin="@dimen/_4sdp"
+        android:padding="@dimen/_5sdp"
+        android:layout_below="@id/layout_one">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="What is 1.3 over all run by MI ?"
+                android:textColor="#939289"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:background="@drawable/amount_bg"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="No"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:background="@drawable/lose_bg"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Rs. 200"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#939289"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="129 run"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Rs. 200"
+                android:textColor="#CA494C"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Rs. 400"
+                android:textColor="#73F340"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5 sec 22 march 24 15:39:22 Sec"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="4"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="LOSE"
+                android:textColor="#CA494C"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
