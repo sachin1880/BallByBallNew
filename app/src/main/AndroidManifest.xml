@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".lottery.NotificationLotteryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".lottery.PrizeViewListActivity"
+            android:exported="false" />
+        <activity
             android:name=".lottery.PrizeListActivity"
             android:exported="false" />
         <activity

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lottery.PrizeListActivity">
+    tools:context=".lottery.PrizeViewListActivity">
+
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -76,33 +76,16 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header">
-
-        <SearchView
-            android:id="@+id/sv_search"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_35sdp"
-            android:background="@drawable/edite_bg"
-            android:layout_margin="@dimen/_8sdp"
-            android:hint="Search by User Name | Case" />
-
-    </RelativeLayout>
-
     <ScrollView
-        android:layout_below="@+id/search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/ll_view_winner"
                 android:layout_width="match_parent"
@@ -115,20 +98,7 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="1st Prize"
-                    android:textSize="@dimen/_13ssp"
-                    android:background="@null"
-                    android:textColor="@color/deposit"
-                    android:textColorHint="@color/deposit"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:padding="@dimen/_5sdp" />
-
-                <TextView
-                    android:layout_weight="1.2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Rs 7500000"
+                    android:text="WN02024"
                     android:textSize="@dimen/_13ssp"
                     android:background="@null"
                     android:textColor="@color/deposit"
@@ -151,20 +121,7 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="2nd Prize"
-                    android:textSize="@dimen/_13ssp"
-                    android:background="@null"
-                    android:textColor="@color/deposit"
-                    android:textColorHint="@color/deposit"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:padding="@dimen/_5sdp" />
-
-                <TextView
-                    android:layout_weight="1.2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Rs 1000000"
+                    android:text="WN02025"
                     android:textSize="@dimen/_13ssp"
                     android:background="@null"
                     android:textColor="@color/deposit"
@@ -187,7 +144,7 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="3rd Prize"
+                    android:text="WN02026"
                     android:textSize="@dimen/_13ssp"
                     android:background="@null"
                     android:textColor="@color/deposit"
@@ -195,21 +152,9 @@
                     android:layout_gravity="center"
                     android:textStyle="bold"
                     android:padding="@dimen/_5sdp" />
-
-                <TextView
-                    android:layout_weight="1.2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Rs 750000"
-                    android:textSize="@dimen/_13ssp"
-                    android:background="@null"
-                    android:textColor="@color/deposit"
-                    android:textColorHint="@color/deposit"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:padding="@dimen/_5sdp" />
-
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
+
 </RelativeLayout>

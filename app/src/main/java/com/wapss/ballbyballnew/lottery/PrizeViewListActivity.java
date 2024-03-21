@@ -1,4 +1,4 @@
-package com.wapss.ballbyballnew.activity;
+package com.wapss.ballbyballnew.lottery;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -12,22 +12,23 @@ import android.widget.ImageView;
 
 import com.wapss.ballbyballnew.R;
 
-public class NotificationActivity extends AppCompatActivity {
+public class PrizeViewListActivity extends AppCompatActivity {
     ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);
+        setContentView(R.layout.activity_prize_view_list);
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(getWindow().getContext(), R.color.black));
+        window.setStatusBarColor(ContextCompat.getColor(getWindow().getContext(), R.color.orange));
         initi();
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NotificationActivity.this, MainActivity.class);
+                Intent intent = new Intent(PrizeViewListActivity.this, PrizeListActivity.class);
                 startActivity(intent);
             }
         });
@@ -35,5 +36,12 @@ public class NotificationActivity extends AppCompatActivity {
 
     private void initi() {
         back = findViewById(R.id.back);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(PrizeViewListActivity.this, PrizeListActivity.class);
+        startActivity(intent);
     }
 }

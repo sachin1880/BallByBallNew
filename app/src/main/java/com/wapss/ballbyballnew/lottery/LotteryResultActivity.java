@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.wapss.ballbyballnew.R;
 
 public class LotteryResultActivity extends AppCompatActivity {
     ImageView back;
+    LinearLayout ll_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +33,17 @@ public class LotteryResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        ll_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LotteryResultActivity.this,PrizeListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initi() {
         back = findViewById(R.id.back);
+        ll_view = findViewById(R.id.ll_view);
     }
 }
